@@ -1,0 +1,51 @@
+
+.container {
+  position: relative;
+  margin: auto;
+  max-width: 52rem;
+  font-family: $f-text;
+}
+
+.button {
+  transition: background $animate-ui, color $animate-ui;
+  color: $c-highlight;
+  cursor: pointer;
+  border: 1px solid $c-highlight;
+  border-radius: 0.5em;
+  padding: 0.8em;
+  position: relative;
+  background: $c-base;
+  text-transform: lowercase;
+  text-decoration: none;
+
+  &:hover {
+    transition: background $animate-ui, color $animate-ui,;
+    background: #302D28;
+  }
+
+  &:after {
+    content: '';
+    background: #d6b36d;
+
+    height: 100%;
+    width: 103%;
+
+    top: 0.5em;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: block;
+    position: absolute;
+    border-radius: 0.5em;
+    z-index: -1;
+  }
+}
+
+.button--inverted {
+  color: $c-base;
+  border-color: $c-base;
+
+  &:after {
+    background-color: $c-base;
+  }
+}

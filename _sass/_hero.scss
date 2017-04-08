@@ -1,0 +1,255 @@
+
+a {
+  color: $c-highlight;
+  &:visited {
+    color: $c-highlight;
+  }
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  background-color: $c-base;
+  font-family: $f-title;
+  overflow: hidden;
+
+  svg {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    max-height: 100%;
+    min-height: 100%;
+    margin: auto;
+  }
+}
+
+.hero-title {
+  color: $c-highlight;
+  margin: 0;
+  text-align: center;
+  font-size: 6em;
+
+  @media screen and (max-width: 900px) {
+    font-size: 4em;
+
+    &.hero-title--supertitle {
+      top: 0;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    font-size: 3em;
+  }
+
+  @media screen and (max-width: 460px) {
+    &.hero-title--email {
+      font-size: 2em;
+    }
+  }
+
+  @media screen and (max-width: 310px) {
+    &.hero-title--email {
+      font-size: 1.5em;
+    }
+  }
+}
+
+.hero-content--email .hero-title {
+  @media screen and (max-width: 600px) {
+    font-size: 3em;
+  }
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.outlined {
+  // Letter outline
+  text-shadow:
+    -1px -1px 0 $c-highlight,
+    1px -1px 0 $c-highlight,
+    -1px 1px 0 $c-highlight,
+    1px 1px 0 $c-highlight;
+}
+
+.hero-title--burst,
+.hero-title--outline {
+  transition: transform $animate-out;
+  color: $c-base;
+  position: absolute;
+  transform: translateY(0.5rem);
+  top: 0;
+  width: 100%;
+
+  @media screen and (max-width: 900px) {
+    transform: translateY(0.65rem);
+  }
+
+  .lit & {
+    transition: transform $animate-in;
+    transform: translateY(1rem);
+  }
+}
+
+.hero-title--burst {
+  transition: opacity $animate-out;
+  text-shadow: 0px 0px 20px $c-highlight;
+  opacity: 0;
+
+  .lit & {
+    transition: opacity $animate-in;
+    opacity: 1;
+  }
+}
+
+.hero-title--subtitle,
+.hero-title--supertitle {
+  color: $c-highlight;
+  font-size: 1em;
+  font-family: $f-text;
+}
+
+.hero-title--supertitle {
+  position: absolute;
+  top: 1em;
+  width: 100%;
+}
+
+.hero-content {
+  z-index: 1;
+  padding-top: 1em;
+  padding-bottom: 2em;
+  background: $c-base;
+  position: absolute;
+  top: 20%;
+  text-align: center;
+  width: 100%;
+}
+
+.hero-links-container {
+  width: 100vw;
+  height: 50vh;
+  position: absolute;
+  bottom: 0;
+  font-size: 3em;
+  pointer-events: none;
+}
+
+.hero-links {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  perspective: 30vh;
+}
+
+.hero-link {
+  position: absolute;
+  bottom: 0;
+  font-size: 1em;
+  transform: translateX(-50%) rotateX(45deg) rotateZ(-90deg);
+  pointer-events: all;
+  text-decoration: none;
+  width: 7em;
+  padding-left: calc(1vh + 7em);
+  color: $c-base;
+
+  &:hover {
+    color: rgba(32, 32, 32, 0.7);
+    &:visited {
+      color: rgba(32, 32, 32, 0.7);
+    }
+  }
+
+  h2 {
+    color: inherit;
+    margin: 0;
+  }
+
+  @media screen and (max-height: 620px) {
+    font-size: 0.8em;
+  }
+
+  @media screen and (max-height: 520px) {
+    font-size: 0.6em;
+  }
+
+  // Fix screen cutting off links
+  @media screen and (max-width: 430px) {
+    padding-left: calc(1vh + 9em);
+  }
+  @media screen and (max-width: 370px) {
+    padding-left: calc(1vh + 11em);
+  }
+
+}
+
+.button--hero {
+  top: 4em;
+}
+
+.hero-link--right {
+  left: calc(50% + 28vh);
+}
+
+.hero-link--center {
+  left: 50%;
+}
+
+.hero-link--left {
+  left: calc(50% - 28vh);
+}
+
+.lit-stripes {
+  animation: fadeout $animate-in;
+  animation-fill-mode: forwards;
+  transition: opacity $animate-in;
+  opacity: 0;
+  filter: drop-shadow( 0px 0px 10px rgba(214, 179, 109, 1) );
+
+  .lit & {
+    animation: fadein $animate-in ;
+    animation-fill-mode: forwards;
+    transition: opacity $animate-in;
+    opacity: 1;
+  }
+
+  & path {
+    fill: rgba(214, 179, 109, 1);
+  }
+}
+
+.lit-stripes--default {
+  // Avoids having the fadeout animation run on load.
+  animation: none;
+}
+
+.stripes path {
+  transition: fill $animate-in;
+  fill: rgba(214, 179, 109, 0.08);
+}
+
+.stripes path:hover {
+  transition: fill $animate-in;
+  fill: rgba(214, 179, 109, 0.5);
+}
+
+.stripes path.selected {
+  fill: rgba(214, 179, 109, 1);
+}

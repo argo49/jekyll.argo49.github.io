@@ -13,17 +13,16 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Paginate Example - 01 Typical Blog
-email: jekyll@sverrirs.com
+title: tylerargo
+email: tylerargo@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Shows how the jekyll-paginate-v2 gem can be used on a typical blog created in Jekyll.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-github_username:  sverrirs
+github_username:  argo49
 
 # Build settings
 markdown: kramdown
-theme: minima
+# theme: minima
 gems:
   - jekyll-paginate-v2
 exclude:
@@ -36,16 +35,16 @@ permalink: /:year/:month/:title.html
 # Pagination Settings
 pagination:
   enabled: true
-  per_page: 3
+  per_page: 1
   permalink: '/page/:num/'
   title: ':title - page :num of :max'
   limit: 0
   sort_field: 'date'
   sort_reverse: true
-  
+
 ############################################################
 # Old jekyll-paginate pagination logic
 #   Uncomment thew two entries below to demonstrate how this new gem
-#   retains backwards compatibility with the old pagination logic 
+#   retains backwards compatibility with the old pagination logic
 #paginate: 3
 #paginate_path: "/legacy/page:num/"

@@ -1,0 +1,21 @@
+.navigation {
+  background: $c-base;
+  color: $c-light;
+
+  ul, li {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.nav-link {
+  display: block;
+  list-style-type: none;
+}
+
+.nav-title {
+  font-size: 3em;
+  margin: 0;
+  display: inline-block;
+  font-family: $f-title;
+}

@@ -28,6 +28,7 @@ gems:
 exclude:
   - Gemfile
   - Gemfile.lock
+include: ["_pages", "_includes"]
 
 # Produces a cleaner folder structure when using categories
 permalink: /:year/:month/:title.html
@@ -41,10 +42,11 @@ pagination:
   limit: 0
   sort_field: 'date'
   sort_reverse: true
+  paginate_path: "/blog/page:/num/"
 
 ############################################################
 # Old jekyll-paginate pagination logic
 #   Uncomment thew two entries below to demonstrate how this new gem
 #   retains backwards compatibility with the old pagination logic
 #paginate: 3
-#paginate_path: "/legacy/page:num/"
+#paginate_path: "/blog/page:/num/"

@@ -5,4 +5,5 @@
 layout: contact
 title: tyler argo
 email: tylerargo@gmail.com
+permalink: /contact/
 ---

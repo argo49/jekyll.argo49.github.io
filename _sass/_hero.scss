@@ -82,6 +82,7 @@ a {
 
 .outlined {
   // Letter outline
+  color: $c-base;
   text-shadow:
     -1px -1px 0 $c-highlight,
     1px -1px 0 $c-highlight,

@@ -9,3 +9,6 @@ $c-base: #222;
 $c-base-light: lighten($c-base, 5%);
 $c-highlight: #d6b36d;
 $c-light: #FFF;
+
+$w-content: 45rem;
+$w-sidebar: 70rem - $w-content;

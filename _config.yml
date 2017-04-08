@@ -31,7 +31,7 @@ exclude:
 include: ["_pages", "_includes"]
 
 # Produces a cleaner folder structure when using categories
-permalink: /:year/:month/:title.html
+permalink: /:year/:month/:day/:title.html
 
 # Pagination Settings
 pagination:

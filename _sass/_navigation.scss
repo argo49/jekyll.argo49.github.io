@@ -4,28 +4,29 @@
   color: $c-light;
 
   ul, li {
-    margin: 0;
     padding: 0;
+  }
+
+  ul {
+    margin: 0;
+  }
+
+  a {
+    text-decoration: none;
   }
 }
 
 .nav-link {
-  position: absolute;
-  display: block;
   list-style-type: none;
-  top: 50%;
-  transform: translateY(-50%);
   font-family: $f-title;
-  font-size: 2em;
-
-  &:first-child {
-    right: 0;
+  text-decoration: none;
+  color: $c-base;
+  &:visited {
+    color: $c-base;
   }
-
 }
 
 .nav-title_container {
-  padding: 1em 0;
   position: relative;
   display: inline-block;
   transform: translateX(-50%);
@@ -33,6 +34,11 @@
   text-decoration: none;
   text-align: center;
   width: 100%;
+  margin-top: 0.5em;
+
+  @media screen and (max-width: 500px) {
+    margin-top: 1em;
+  }
 }
 
 .nav-title {
@@ -43,6 +49,10 @@
   font-family: $f-title;
   left: 0;
   right: 0;
+
+  @media screen and (max-width: 500px) {
+    font-size: 2.5em;
+  }
 }
 
 .nav-title--outlined {
@@ -58,13 +68,50 @@
   display: none;
 }
 
+.page_container {
+  padding: 1em;
+}
+
+.nav-link {
+  font-size: 1.5em;
+  margin: 0.75em 1em 0.5em 1em;
+  @media screen and (max-width: 500px) {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+  }
+}
+
+.nav-links_content {
+  display: flex;
+  justify-content: center;
+}
+
 // Sidebar time
 @media screen and (min-width: $w-content + $w-sidebar) {
   .navigation {
     height: 100vh;
     width: $w-sidebar;
     position: fixed;
-    padding: 3rem 0;
+  }
+
+  .nav-title_container,
+  .nav-links_container {
+    height: 50vh;
+    position: relative;
+  }
+
+  .nav-title_content,
+  .nav-links_content {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .nav-links_content {
+    height: 75%;
+    flex-direction: column;
+    justify-content: space-around;
   }
 
   .nav-title {
@@ -81,9 +128,26 @@
     transform: translateY(-1.9em);
   }
 
-  .page_container {
-    padding-left: $w-sidebar + 2rem;
+  .nav-link {
+    transition: background-color $animate-out;
+    font-size: 2em;
+    text-align: center;
+    background-color: rgba(214, 179, 109, 0.08);
+    padding: 0.2em;
+    border-top: 1px solid $c-highlight;
+    border-bottom: 1px solid $c-highlight;
+    margin-left: 0;
+    margin-right: 0;
 
+    &:hover {
+      transition: background-color $animate-in;
+      background-color: rgba(214, 179, 109, 0.5)
+    }
+  }
+
+  .page_container {
+    transition: transform $animate-in;
+    padding-left: $w-sidebar + 2rem;
   }
 
   .sidebar-only {

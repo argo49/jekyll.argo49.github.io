@@ -28,6 +28,7 @@ a {
   margin: 0;
   text-align: center;
   font-size: 6em;
+  font-family: $f-title;
 
   @media screen and (max-width: 900px) {
     font-size: 4em;
@@ -164,6 +165,7 @@ a {
   position: absolute;
   bottom: 0;
   font-size: 1em;
+  font-family: $f-title;
   transform: translateX(-50%) rotateX(45deg) rotateZ(-90deg);
   pointer-events: all;
   text-decoration: none;

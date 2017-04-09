@@ -1,14 +1,10 @@
 <footer class="footer">
   <hr/>
-  This site was last updated
-  <span class="footer-date">
-    {% assign t = site.time | date: "%-d"  %}
-    {{ site.time | date: "%B" }}
-    {% case d %}
-      {% when '1' or '21' or '31' %}{{ d }}st
-      {% when '2' or '22' %}{{ d }}nd
-      {% when '3' or '23' %}{{ d }}rd
-      {% else %}{{ d }}th{% endcase %},
-    {{ site.time | date: "%Y" }}
-  </span>
+  <p>
+    This site was last updated on
+    <span class="footer-date">
+      {{ site.time | date: '%B %d, %Y' }}
+    </span>
+  </p>
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
 </footer>

@@ -4,3 +4,20 @@
   width: $w-content;
   max-width: 100%;
 }
+
+.post-text {
+  line-height: 1.5em;
+}
+
+.post-date {
+  margin-top: 0.5em;
+}
+
+.post-date + hr {
+  margin-top: 0.5em;
+  margin-bottom: 1.5em;
+
+  @media screen and (max-width: $w-content) {
+    margin: 1em 0;
+  }
+}

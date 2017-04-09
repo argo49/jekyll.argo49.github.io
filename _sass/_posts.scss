@@ -1,0 +1,39 @@
+.posts {
+  li {
+    list-style-type: none;
+  }
+
+  ul {
+    padding: 0;
+  }
+
+  .footer hr {
+    display: none;
+  }
+}
+
+.read-more {
+  text-align: right;
+}
+
+.page-heading--posts {
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.pager {
+  margin-top: 2em;
+  margin-bottom: 3em;
+}
+
+.pager {
+  text-align: center;
+  list-style: none;
+}
+
+.pager li {
+  display: inline;
+  border: 1px solid $c-highlight; 
+  padding: 10px;
+  margin: 5px;
+}

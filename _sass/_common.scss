@@ -6,6 +6,25 @@
   font-family: $f-text;
 }
 
+hr {
+  opacity: 0.5;
+}
+
+div, p {
+  font-family: $f-text;
+}
+
+figure {
+  margin-right: 0;
+  overflow-x: auto;
+
+  @media screen and (max-width: 500px) {
+    margin-left: 0;
+    border-left: 1px solid $c-base;
+    padding-left: 0.5em;
+  }
+}
+
 .button {
   transition: background $animate-ui, color $animate-ui;
   color: $c-highlight;
@@ -28,7 +47,7 @@
     background: #d6b36d;
 
     height: 100%;
-    width: 103%;
+    width: 100%;
 
     top: 0.5em;
     left: 50%;

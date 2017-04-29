@@ -2,6 +2,7 @@
   position: relative;
   background: $c-base;
   color: $c-light;
+  overflow: hidden;
 
   ul, li {
     padding: 0;
@@ -69,7 +70,8 @@
 }
 
 .page_container {
-  padding: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 .nav-link {
@@ -96,8 +98,15 @@
 
   .nav-title_container,
   .nav-links_container {
-    height: 50vh;
     position: relative;
+  }
+
+  .nav-title_container {
+    height: 50vh;
+  }
+
+  .nav-links_container {
+    height: 30vh;
   }
 
   .nav-title_content,

@@ -6,8 +6,17 @@
 
 .page-heading {
   margin-bottom: 0;
+  font-family: $f-title;
+  color: $c-base;
+  font-size: 3em;
+}
 
-  @media screen and (max-width: $w-content) {
+@media screen and (max-width: $w-content) {
+  .page-heading {
     font-size: 1.75em;
+  }
+
+  .page_container {
+    padding-top: 1.5rem;
   }
 }

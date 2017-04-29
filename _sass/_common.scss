@@ -14,15 +14,8 @@ div, p {
   font-family: $f-text;
 }
 
-figure {
-  margin-right: 0;
-  overflow-x: auto;
-
-  @media screen and (max-width: 500px) {
-    margin-left: 0;
-    border-left: 1px solid $c-base;
-    padding-left: 0.5em;
-  }
+p, code {
+  line-height: 1.5em;
 }
 
 .button {

@@ -4,9 +4,9 @@ layout: default
 
 <div class="hero">
   <div class="hero-content">
-    <h1 class="hero-title">{{ page.title }}</h1>
-    <h1 class="hero-title hero-title--outline outlined">{{ page.title }}</h1>
-    <h1 class="hero-title hero-title--burst outlined">{{ page.title }}</h1>
+    <h1 class="hero-title">tyler argo</h1>
+    <h1 class="hero-title hero-title--outline outlined">tyler argo</h1>
+    <h1 class="hero-title hero-title--burst outlined">tyler argo</h1>
     <h2 class="hero-title hero-title--subtitle">{{ page.subtitle }}</h2>
   </div>
 
@@ -32,7 +32,7 @@ layout: default
 
   <div class="hero-links-container">
     <div class="hero-links">
-      <a href="#one" class="hero-link hero-link--left outlined">
+      <a href="/about" class="hero-link hero-link--left outlined">
         <h2>about me</h2>
       </a>
       <a href="/blog" class="hero-link hero-link--center outlined">
@@ -47,26 +47,26 @@ layout: default
 </div>
 
 <script type="text/javascript">
-  (function () {
-    let hero = document.querySelector('.hero');
-    let litStripes = document.querySelector('.lit-stripes');
-    let selected = 0;
+(function() {
+  let hero = document.querySelector(".hero");
+  let litStripes = document.querySelector(".lit-stripes");
+  let selected = 0;
 
-    document.querySelectorAll('.stripes path').forEach((element) => {
-      element.onclick = (event) => {
-        selected += element.classList.contains('selected') ? -1 : 1;
-        element.classList.toggle('selected');
-        light(selected);
-      }
-    });
+  document.querySelectorAll(".stripes path").forEach(element => {
+    element.onclick = event => {
+      selected += element.classList.contains("selected") ? -1 : 1;
+      element.classList.toggle("selected");
+      light(selected);
+    };
+  });
 
-    function light (numSelected) {
-      if (numSelected === 5) {
-        hero.classList.add('lit');
-        litStripes.classList.remove('lit-stripes--default');
-      } else {
-        hero.classList.remove('lit');
-      }
+  function light(numSelected) {
+    if (numSelected === 5) {
+      hero.classList.add("lit");
+      litStripes.classList.remove("lit-stripes--default");
+    } else {
+      hero.classList.remove("lit");
     }
-  })();
+  }
+})();
 </script>

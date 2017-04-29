@@ -1,22 +1,39 @@
 ---
-layout: default
+layout: default_with_nav
 ---
-
-{% include navigation.html %}
 <div class="page_container">
-  <h1>Hi</h1>
-  {% if paginator.total_pages > 1 %}
-  <ul>
-    {% if paginator.previous_page %}
-    <li>
-      <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}">Newer</a>
-    </li>
+  <div class="posts">
+    <h1 class="page-heading page-heading--posts">Blog Posts</h1>
+    {{ content }}
+    <ul class="post-list">
+      {% for post in paginator.posts %}
+        <li>
+          <h2>
+            <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+          </h2>
+          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+          <p>{{ post.excerpt }}</p>
+          <div class="read-more">
+            <a href="{{ post.url | relative_url }}">read more</a>
+          </div>
+          <hr/>
+        </li>
+      {% endfor %}
+    </ul>
+    {% if paginator.total_pages > 1 %}
+    <ul class="pager">
+        {% if paginator.previous_page %}
+        <li class="previous button button--inverted">
+            <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
+        </li>
+        {% endif %}
+        {% if paginator.next_page %}
+        <li class="next button button--inverted">
+            <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
+        </li>
+        {% endif %}
+    </ul>
     {% endif %}
-    {% if paginator.next_page %}
-    <li>
-      <a href="{{ paginator.next_page_path | prepend: site.baseurl }}">Older</a>
-    </li>
-    {% endif %}
-  </ul>
-  {% endif %}
+    {% include footer.html %}
+  </div>
 </div>

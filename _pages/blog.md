@@ -1,6 +1,7 @@
 ---
-layout: home_example
+layout: posts
 permalink: /blog/
+title: Blog Posts
 pagination:
   enabled: true
 ---

@@ -1,25 +1,47 @@
 ---
-layout: default
+layout: default_with_nav
 ---
-
-{% include navigation.html %}
 <div class="page_container">
   <div class="post">
     <h1 class="page-heading">{{ page.title }}</h1>
-    <div class="post-date">
-      {% assign d = page.date | date: "%-d"  %}
-      {{ page.date | date: "%B" }}
-      {% case d %}
-        {% when '1' or '21' or '31' %}{{ d }}st
-        {% when '2' or '22' %}{{ d }}nd
-        {% when '3' or '23' %}{{ d }}rd
-        {% else %}{{ d }}th{% endcase %},
-      {{ page.date | date: "%Y" }}
-    </div>
+    {% if page.date %}
+      <div class="post-date">
+        {% assign d = page.date | date: "%-d"  %}
+        {{ page.date | date: "%B" }}
+        {% case d %}
+          {% when '1' or '21' or '31' %}{{ d }}st
+          {% when '2' or '22' %}{{ d }}nd
+          {% when '3' or '23' %}{{ d }}rd
+          {% else %}{{ d }}th{% endcase %},
+        {{ page.date | date: "%Y" }}
+      </div>
+    {% endif %}
     <hr/>
     <div class="post-text">
       {{ content }}
     </div>
+
+    {% if page.previous.url or page.next.url %}
+      <hr class="spaced"/>
+      <div class="post-navigation">
+
+        {% if page.previous.url %}
+          <div class="post-navigation_prev">
+            <div>Previously:</div>
+            <a class="next" href="{{page.previous.url}}">{{page.previous.title}}</a>
+          </div>
+        {% endif %}
+
+        {% if page.next.url %}
+          <div class="post-navigation_next">
+            <div>Next Up:</div>
+            <a class="prev" href="{{page.next.url}}">{{page.next.title}}</a>
+          </div>
+        {% endif %}
+
+      </div>
+    {% endif %}
+
     {% include footer.html %}
   </div>
 </div>

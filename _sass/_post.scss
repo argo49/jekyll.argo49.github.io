@@ -6,7 +6,9 @@
 }
 
 .post-text {
-  line-height: 1.5em;
+  p {
+    margin: 1.3em 0;
+  }
 }
 
 .post-date {
@@ -20,4 +22,10 @@
   @media screen and (max-width: $w-content) {
     margin: 1em 0;
   }
+}
+
+.post-navigation {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
 }

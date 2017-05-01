@@ -5,6 +5,9 @@ layout: default_with_nav
   <div class="posts">
     <h1 class="page-heading page-heading--posts">Blog Posts</h1>
     {{ content }}
+    {% if paginator.posts.size < 1 %}
+      <p>No blog posts found, but they're on the way!</p>
+    {% endif %}
     <ul class="post-list">
       {% for post in paginator.posts %}
         <li>

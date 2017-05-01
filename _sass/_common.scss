@@ -14,8 +14,12 @@ div, p {
   font-family: $f-text;
 }
 
-p, code {
+.post-text {
   line-height: 1.5em;
+  font-size: 1.1em;
+  @media screen and (max-width: $w-content) {
+    font-size: 1em;
+  }
 }
 
 .button {

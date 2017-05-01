@@ -21,7 +21,7 @@ basis the happier I am as a developer! That being said, I regularly write JavaSc
 HTML, CSS, Python, Java and SQL.
 
 If you've read this far and are still craving more, you can:
-* Read some of my [blog posts](http://localhost:4000/blog/) on this site
+* Read some of my [blog posts](/blog) on this site
 * Follow me on [Twitter](https://twitter.com/argo_49)
 * Add me on [LinkedIn](https://www.linkedin.com/in/tylerargo/)
 * Look at my digital doodles on [CodePen](http://codepen.io/argo49/pens/public/)

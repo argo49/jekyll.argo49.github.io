@@ -1,5 +1,3 @@
----
----
 ## Hey wow how'd you do that thing on the [homepage](/)?
 
 I'm glad you noticed that when you click on all the stripes everything lights up!

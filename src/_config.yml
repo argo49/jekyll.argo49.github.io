@@ -31,6 +31,7 @@ gems:
 exclude:
   - Gemfile
   - Gemfile.lock
+  - Rakefile
 include: ["_pages", "_includes"]
 
 # Produces a cleaner folder structure when using categories
